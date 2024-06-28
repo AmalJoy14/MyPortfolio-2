@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    color: aliceblue;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color:#23153C;
+    font-family: 'Signika Negative', sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    filter: drop-shadow(2px 2px 2px black);
+}
+.title{
+    visibility: hidden;
+}
+
+/************************************************************************************HEADER*****************************************************************************/
+.myPortfolio {
+    display: flex;
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: system-ui;
+    font-weight: bold;
+}
+
+.myPortfolio p{
+    padding-left: 7px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: blue;
+}
+
+header {
+    z-index: 10;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.HeaderObj {
+    position: relative;
+    font-size: 18px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    visibility: hidden;
+}
+
+.HeaderObj:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 0px;
+    background: blue;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.HeaderObj:hover:before {
+    width: 100%;
+}
+
+.HeaderObjGroup {
+    font-family: system-ui;
+    margin-right: 40px;
+    width: 15cm;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ToHome {
+    display: none;
+}

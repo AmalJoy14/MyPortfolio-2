@@ -1,0 +1,79 @@
+/*************************************************************************SUB SECTION**********************************************************************************/
+.skills {
+    width: 100%;
+    max-height: 140px;
+    background-color: black;
+    border: 1px solid white;
+    overflow: hidden;
+    box-shadow: 0px -2px 3px black, 0px 2px 3px black;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.SkillsTitle {
+    background-color: #285AEB;
+    display: inline-block;
+    height: 80px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 5px;
+    rotate: -45deg;
+    font-size: xx-large;
+    font-family: cursive;
+    position: absolute;
+    left: -70px;
+    top: -10px;
+    z-index: 1;
+    box-shadow: 0px 2px 1px rgb(197, 191, 191);
+}
+.SkillMainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SkillsContainer1,.SkillsContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 110px;
+    padding-left: 55px;
+    padding-right: 55px;
+    animation: scroll-horizontal 20s linear infinite;
+}
+
+
+.SkillsContainer1 div , .SkillsContainer2 div{
+    min-height: 60px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.skillIcon {
+    min-height: 40px;
+    min-width: 40px;
+    max-height: 60px;
+    max-height: 60px;
+    filter: drop-shadow(0px 3px 4px  rgba(0,255,255,0.7) );
+    transition: 0.3s;
+}
+
+img.skillIcon:hover {
+    transform: translateY(-10px);
+    filter: drop-shadow( 0px 7px 7px rgba(0,255,255,0.7));
+    transition: 0.3s;
+}
+@keyframes scroll-horizontal{
+    from{
+        transform:translateX(0%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
