@@ -139,11 +139,13 @@
     color: white;
     border-color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 .Button1:hover i{
     color: white;
     border-color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 .LinkedinGithub {
     margin-top: 10px;
@@ -175,11 +177,13 @@
 .GithubIcon .fa-brands:hover, .LinkedinIcon .fa-brands:hover{
     color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 .GithubIcon:hover , .LinkedinIcon:hover{
     border-color: white;
     background-color:  rgb(104, 147, 204);
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .homeItem, .Button1, .LinkedinIcon, .GithubIcon{

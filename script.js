@@ -6,7 +6,7 @@ cvBtn.addEventListener("click", () => {
 //----------------------------------------------------------------
 
 //function to add effect to list
-function addEffect(number, delay, list,effect) {
+function addEffect(number, delay, list, effect) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             list[number].classList.add(effect);
@@ -17,7 +17,7 @@ function addEffect(number, delay, list,effect) {
 //----------------------------------------------------------------
 
 //function to remove effect from list
-function removeEffect(number,list,effect){
+function removeEffect(number, list, effect) {
     list[number].classList.remove(effect);
 }
 //-----------------------------------------------------------------
@@ -26,9 +26,9 @@ function removeEffect(number,list,effect){
 const headerObjGrp = document.querySelectorAll(".HeaderObj");
 
 async function addDropEffectToHeader() {
-    await addEffect(0, 0,headerObjGrp,"newDropEffect");
-    for (let i=1 ;i<=4 ;i++){
-        await addEffect(i, 300 ,headerObjGrp,"newDropEffect");
+    await addEffect(0, 0, headerObjGrp, "newDropEffect");
+    for (let i = 1; i <= 4; i++) {
+        await addEffect(i, 300, headerObjGrp, "newDropEffect");
     }
 }
 addDropEffectToHeader();
@@ -37,7 +37,6 @@ addDropEffectToHeader();
 //Adding animation to titles
 const observer2 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add("newStampEffect");
         }
@@ -56,22 +55,21 @@ const contactItemGrp = document.querySelectorAll(".contactItem");
 
 const observer3 = new IntersectionObserver((entries) => {
     entries.forEach(async (entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
-                await addEffect(0,0,contactItemGrp,"newDropEffect");
-                for (let i=1;i<5;i++){
-                    await addEffect(i, 300,contactItemGrp,"newDropEffect");
-                }
+            await addEffect(0, 0, contactItemGrp, "newDropEffect");
+            for (let i = 1; i < 5; i++) {
+                await addEffect(i, 300, contactItemGrp, "newDropEffect");
+            }
         } else {
-                for (let i=0;i<5;i++){
-                    removeEffect(i,contactItemGrp,"newDropEffect");
-                }
+            for (let i = 0; i < 5; i++) {
+                removeEffect(i, contactItemGrp, "newDropEffect");
+            }
         }
     });
 });
 
 const ContactMainBox = document.querySelector(".ContactMainBox");
-observer3.observe(ContactMainBox); 
+observer3.observe(ContactMainBox);
 //-----------------------------------------------------------------------------
 
 //Adding animation to home
@@ -79,43 +77,57 @@ const homeItemGrp = document.querySelectorAll(".homeItem, .Button1, .LinkedinIco
 
 const observer4 = new IntersectionObserver((entries) => {
     entries.forEach(async (entry) => {
-        console.log(entry);
         if (entry.isIntersecting) {
-                await addEffect(0,0,homeItemGrp,"newFade-inEffect");
-                for (let i=1;i<7;i++){
-                    await addEffect(i, 300,homeItemGrp,"newFade-inEffect");
-                }
+            await addEffect(0, 0, homeItemGrp, "newFade-inEffect");
+            for (let i = 1; i < 7; i++) {
+                await addEffect(i, 300, homeItemGrp, "newFade-inEffect");
+            }
         } else {
-                for (let i=0;i<7;i++){
-                    removeEffect(i,homeItemGrp,"newFade-inEffect");
-                }
+            for (let i = 0; i < 7; i++) {
+                removeEffect(i, homeItemGrp, "newFade-inEffect");
+            }
         }
     });
 });
 
 const profileContents = document.querySelector(".profileContent");
-observer4.observe(profileContents); 
+observer4.observe(profileContents);
 //-----------------------------------------------------------------------------
 
-//Adding animation to education
-const eduItemGrp = document.querySelectorAll(".EducationDuration, .Degree, .EducationLogo, .SchoolName, .grade");
+//For education box hover effect
+let elList = document.querySelectorAll('.EducationBox');
 
-const observer5 = new IntersectionObserver((entries) => {
-    entries.forEach(async (entry) => {
-        console.log(entry);
-        if (entry.isIntersecting) {
-                await addEffect(0,0,eduItemGrp,"newDropEffect");
-                for (let i=1;i<15;i++){
-                    await addEffect(i,200,eduItemGrp,"newDropEffect");
-                }
-        } else {
-                for (let i=0;i<15;i++){
-                    removeEffect(i,eduItemGrp,"newDropEffect");
-                }
-        }
+for (let el of elList) {
+    const height = el.clientHeight;
+    const width = el.clientWidth;
+
+    el.addEventListener('mousemove', (e) => handleMove(e, el, width, height));
+
+    el.addEventListener('mouseout', () => {
+        el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)';
     });
-});
 
-const EduBoxGrp = document.querySelector(".EducationBoxGroup");
-observer5.observe(EduBoxGrp); 
-//-----------------------------------------------------------------------------
+    el.addEventListener('mousedown', () => {
+        el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)';
+    });
+
+    el.addEventListener('mouseup', () => {
+        el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)';
+    });
+}
+
+function handleMove(e, el, width, height) {
+    const xVal = e.layerX;
+    const yVal = e.layerY;
+
+    const yRotation = 20 * ((xVal - width / 2) / width);
+    const xRotation = -20 * ((yVal - height / 2) / height);
+
+    const transformString = `perspective(500px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+
+    el.style.transform = transformString;
+}
+
+
+
+

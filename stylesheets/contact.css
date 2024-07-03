@@ -89,11 +89,13 @@
     border: 2px solid white;
     color: white;
     background-color: black;
+    transition: 0.3s;
 }
 
 .ContactIcon i:hover {
-    color:blue;
-    border-color: blue;
+    color:black;
+    background-color: white;
+    border-color: black;
     transform: translateY(-6px);
     transition: 0.3s;
 }

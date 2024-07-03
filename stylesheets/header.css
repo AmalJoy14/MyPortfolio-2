@@ -24,18 +24,10 @@ h1 {
 
 /************************************************************************************HEADER*****************************************************************************/
 .myPortfolio {
-    display: flex;
     margin-left: 20px;
-    font-size: 25px;
-    font-family: system-ui;
-    font-weight: bold;
-}
-
-.myPortfolio p{
-    padding-left: 7px;
-    font-family: system-ui;
-    font-weight: bold;
-    color: blue;
+    font-size: 22px;
+    font-family:  "Playwrite NO";
+    font-weight: 400;
 }
 
 header {

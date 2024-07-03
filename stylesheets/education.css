@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
 /**********************************************************************************SECTION 2****************************************************************************/
 #Education {
     height: 800px;
     overflow: hidden;
     border-top: 2px solid rgb(102, 75, 210);
     box-shadow: inset 0px 2px 2px black;
+    position: relative;
 }
 
 .EducationTitle {
@@ -14,81 +17,244 @@
     text-decoration: underline;
     filter: drop-shadow(2px 2px 2px rgb(0, 0, 0));
 }
+.line{
+    height: 470px;
+    width: 5px;
+    background-color:  rgb(0,255,255);
+    box-shadow: 0px 3px 4px rgba(0,255,255,0.7);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    bottom: 67px;
+
+}
+.line>div{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(71, 1, 136);
+    border-radius: 3px;
+    rotate: 45deg;
+    position: relative;
+    transform: translateX(-14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line .circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color:  rgb(0,255,255);
+    box-shadow: 0px 0px 2px 1px rgb(0,255,255);
+}
+.line .pointThree{
+    top: 16px;
+    position: relative;
+}
 
 .EducationBoxGroup {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     margin-left: 25px;
     margin-right: 25px;
 }
+.EducationBoxGroup1 ,.EducationBoxGroup2{
+    position: relative;
+    width: 40%;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.EducationBoxGroup1{
+    align-items: flex-end;
+}
+.EducationBoxGroup2{
+    align-items: flex-start;
+}
 
-.EducationBox1,
-.EducationBox2,
-.EducationBox3 {
+.EducationBox {
     vertical-align: 2cm;
-    width: 350px;
-    height: 500px;
+    width: 100%;
     font-size: 5mm;
-    border: 2mm ridge rgb(22, 12, 75);
-    border-radius: 30px;
+    border: 3px solid rgb(22, 12, 75);
+    border-radius: 20px;
     padding: 15px;
-    padding-top: 35px;
+    padding-top: 7px;
     box-shadow: 2px 2px 4px black;
-}
-
-.EducationBox1:hover,
-.EducationBox2:hover,
-.EducationBox3:hover {
-    transition-duration: 2s;
-    transform: scale(1.02, 1.02);
-}
-
-.EducationBox1 {
-    background-image: url("../Images/Education/Sjcet.png");
-    background-size: cover;
+    background-color: black;
     overflow: hidden;
+    position: relative;
+    z-index: 5;
+    transition: box-shadow 0.1s, transform 0.1s;
+    box-shadow: 0px 3px 4px 2px rgba(0,255,255,0.7);
 }
 
-.EducationBox2 {
-    background-image: url("../Images/Education/Skps1.png");
-    background-size: cover;
-    overflow: hidden;
+
+.EducationBox1{
+    bottom: 10px;
 }
 
-.EducationBox3 {
-    background-image: url("../Images/Education/Skps2.png");
-    background-size: cover;
-    overflow: hidden;
+.EducationBox2{
+    bottom: 30px;
 }
+    
+.EducationBox3{
+    bottom: 35px;
+}
+
+
 
 .EducationDuration {
     color: darkgoldenrod;
-    font-family: Tahoma, Geneva, Verdana, sans-serif
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    filter: drop-shadow(2px 2px 2px black);
+}
+.ed2{
+    bottom: 80px;
+}
+.ed3{
+    bottom: 140px;
 }
 
 .EducationLogo {
     height: 50px;
     width: 50px;
-    margin-right: 20px;
 }
+
 
 .SchoolName {
     font-family: serif;
     font-style: italic;
+    width: 80%;
 }
-
+.EducationBox2 .SchoolName{
+    text-align: right;
+}
+.schoolLogoAndName{
+    display: flex;
+    gap: 5%;
+}
+.EducationBox2 .schoolLogoAndName{
+    justify-content: flex-end;
+}
+.EducationBox2 .Degree{
+    display: flex;
+    justify-content: flex-end;
+}
+.EducationBox2 .grade{
+    text-align: right;
+}
 .School {
     display: flex;
-}
-.EducationDuration, .Degree, .EducationLogo, .SchoolName, .grade{
-    visibility: hidden;
-}
-.eduItem {
-    overflow: hidden;
+    flex-direction: column;
+    gap: 10px;
 }
 .eduItemA{
     width: 50px;
     height: 50px;
-    margin-right: 20px;
+}
+.Degree{
+    margin-bottom: 10px;
+}
+
+  
+  .EducationBox:hover {
+    box-shadow: 0px 0px 30px rgba(0,255,255,0.7);
+    cursor: pointer;
+  }
+
+
+
+/* Backgroung animation */
+
+
+
+.hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #3A2E51;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 17s ease-in forwards infinite;
+          animation: cube 17s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #403456;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 10vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  80%{
+    opacity: 0.1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  80%{
+    opacity: 0.1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
 }
