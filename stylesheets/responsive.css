@@ -80,14 +80,12 @@
         width: 50px;
     }
 
-    .SkillsContainer {
-        height: 90px;
-        gap: 5%;
-    }
-
 }
 
 @media (max-width:500px) {
+    .EducationBox{
+        width: 85%;
+    }
     .EducationBox{
         font-size: 12px;
     }
@@ -97,6 +95,8 @@
 
     .SkillsContainer1,.SkillsContainer2{
         gap: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 @media (max-width:450px) {
