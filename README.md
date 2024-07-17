@@ -31,3 +31,4 @@ Hello! I'm Amal Joy, a passionate web development student specializing in the ME
 
 #### Contact
 I'm always excited to connect with fellow developers, potential employers, or anyone interested in my work. Feel free to reach out to me.
+
